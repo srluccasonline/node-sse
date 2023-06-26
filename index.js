@@ -8,6 +8,10 @@ app.use(cors());
 
 let database_number = [];
 
+app.get("/", (req, res) => {
+  res.send("OK Server")
+})
+
 // Endpoint SSE "/realtime"
 app.get('/realtime', (req, res) => {
   res.setHeader('Content-Type', 'text/event-stream');
@@ -40,5 +44,5 @@ app.post('/change', (req, res) => {
 });
 
 app.listen(3000, () => {
-  console.log('Servidor rodando');
+  console.log('Server is running on port 3000');
 });
